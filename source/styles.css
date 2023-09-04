@@ -1,9 +1,9 @@
-:root {
+:root { 
   --primary-color: #2C64E3;
   --secondary-color: #374e84;
   --primary-background-color: #F4F7FE;
   --primary-white: #fcfcfc;
-  --primary-color-light: #3366FF33;
+  --primary-color-light: #3366ff33;
   --font-size: 16px;
 }
 
@@ -197,6 +197,9 @@ button {
   border-radius: 8px;
   padding: 32px 20px;
   gap: 16px;
+}
+.dropping{
+  background-color:  rgba(51, 102, 255, 0.2);
 }
 .drag-drop-text {
   font-weight: bold;

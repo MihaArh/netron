@@ -335,14 +335,25 @@ host.BrowserHost = class {
         }
       });
     }
-    this.document.addEventListener("dragover", (e) => {
+    this.document
+      .getElementById("drop-area")
+      .addEventListener("dragover", (e) => {
+        e.preventDefault();
+        this.document.getElementById("drop-area").classList.add("dropping");
+      });
+    this.document
+      .getElementById("drop-area")
+      .addEventListener("dragleave", (e) => {
+        e.preventDefault();
+        this.document.getElementById("drop-area").classList.remove("dropping");
+      });
+    this.document.getElementById("drop-area").addEventListener("drop", (e) => {
       e.preventDefault();
+      this.document.getElementById("drop-area").classList.remove("dropping");
     });
-    this.document.addEventListener("drop", (e) => {
+    this.document.getElementById("drop-area").addEventListener("drop", (e) => {
       e.preventDefault();
-    });
-    this.document.body.addEventListener("drop", (e) => {
-      e.preventDefault();
+      this.document.getElementById("drop-area").classList.remove("dropping");
       if (
         e.dataTransfer &&
         e.dataTransfer.files &&
