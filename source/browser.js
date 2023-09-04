@@ -795,7 +795,6 @@ host.BrowserHost = class {
   _message(message, action, img) {
     return new Promise((resolve) => {
       this._element("message-text").innerText = message;
-      console.log(img);
       if (img) {
         this._element("message-image").setAttribute("src", img);
         this._element("message-image").style.display = "block";
