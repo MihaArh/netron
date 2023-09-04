@@ -1137,10 +1137,10 @@ button {
   }
   .menu .menu-group .menu-command:focus{
     color: var(--text-color-white);
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
   }
   .menu .menu-group .menu-command:focus::before {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
   }
   .about .logo {
     color: var(--primary-white);
