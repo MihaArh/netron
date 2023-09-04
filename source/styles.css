@@ -978,7 +978,7 @@ button {
 .welcome.spinner .logo-name {
   display: none;
 }
-.welcome.spinner .open-file-button {
+.welcome.spinner .drop-area {
   display: none;
 }
 .welcome.spinner .graph {
