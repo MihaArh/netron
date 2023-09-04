@@ -69,7 +69,7 @@ const mkdir = async (...args) => {
 };
 
 const copy = async (source, target, filter) => {
-    let files = await fs.readdir(source);
+    let files = await fs.readdir(source, { recursive: true});
     files = filter ? files.filter((file) => filter(file)) : files;
     const promises = files.map((file) => fs.copyFile(path.join(source, file), path.join(target, file)));
     await Promise.all(promises);
@@ -233,6 +233,7 @@ const build = async (target) => {
             writeLine('build web');
             await rm('dist', 'web');
             await mkdir('dist', 'web');
+            await mkdir('dist', 'web', "assets");
             writeLine('cp source/dir dist/dir');
             const source_dir = path.join(__dirname, 'source');
             const dist_dir = path.join(__dirname, 'dist', 'web');
