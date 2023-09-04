@@ -406,7 +406,7 @@ button {
   cursor: pointer;
   text-decoration: none;
   text-align: center;
-  font-size: 25px;
+  font-size: 26px;
   color: var(--primary-color);
   opacity: 1;
   display: block;
@@ -843,7 +843,7 @@ button {
   cursor: pointer;
   align-items: center;
   color: #aaaaaa;
-  font-size: 24px;
+  font-size: 26px;
   height: 32px;
   width: 32px;
   position: fixed;
