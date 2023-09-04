@@ -1479,6 +1479,7 @@ view.Menu = class {
       this.unregister(this._push);
       this._element.style.opacity = 0;
       this._element.style.left = "-17em";
+      this._document.getElementById("menu-button").innerHTML = "&#8801;";
       const button = this._element.ownerDocument.activeElement;
       if (this._buttons.indexOf(button) > 0) {
         button.blur();
