@@ -1,9 +1,9 @@
-:root {
+:root { 
   --primary-color: #2C64E3;
   --secondary-color: #374e84;
   --primary-background-color: #F4F7FE;
   --primary-white: #fcfcfc;
-  --primary-color-light: #3366FF33;
+  --primary-color-light: #3366ff33;
   --font-size: 16px;
 }
 
@@ -173,6 +173,37 @@ button {
   background-color: var(--primary-background-color);
   color: #242424;
 }
+.logo {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+}
+.logo-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.drop-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: dashed 2px var(--primary-color);
+  border-radius: 8px;
+  padding: 32px 20px;
+  gap: 16px;
+}
+.dropping{
+  background-color:  rgba(51, 102, 255, 0.2);
+}
+.drag-drop-text {
+  font-weight: bold;
+}
 .logo-text {
   top: -57px;
   width: 582px;
@@ -183,16 +214,25 @@ button {
   width: 582px;
   transition: 0.1s;
 }
+.logo-section a {
+  position: relative;
+}
 .logo-icon {
-  left: 248px;
-  top: -18px;
+  /* left: 248px;
+  top: -18px; */
+  position: absolute;
+  left: 356px;
+  top: 21px;
   width: 106px;
   height: 106px;
   transition: 0.1s;
 }
 .logo-spinner {
-  left: 248px;
-  top: -18px;
+  /* left: 248px;
+  top: -18px; */
+  position: absolute;
+  left: 356px;
+  top: 21px;
   width: 106px;
   height: 106px;
   display: none;
@@ -237,7 +277,6 @@ button {
 }
 .logo-message {
   display: none;
-  height: 0px;
 }
 .logo-github {
   display: none;
@@ -370,7 +409,7 @@ button {
   cursor: pointer;
   text-decoration: none;
   text-align: center;
-  font-size: 25px;
+  font-size: 26px;
   color: var(--primary-color);
   opacity: 1;
   display: block;
@@ -682,14 +721,19 @@ button {
 .about .toolbar {
   display: none;
 }
+.about .drop-area {
+  display: none;
+}
 .about .logo-message {
-  display: block;
-  top: 132px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
   font-size: 14px;
 }
 .about .logo-github {
   display: block;
-  top: 340px;
   width: 48px;
   height: 48px;
 }
@@ -714,6 +758,9 @@ button {
 }
 .about .progress {
   display: none;
+}
+.about .logo-section {
+  gap: 8ox
 }
 .about .menu-button {
   display: none;
@@ -799,7 +846,7 @@ button {
   cursor: pointer;
   align-items: center;
   color: #aaaaaa;
-  font-size: 24px;
+  font-size: 26px;
   height: 32px;
   width: 32px;
   position: fixed;
@@ -947,29 +994,44 @@ button {
   display: none;
 }
 @media all and (max-width: 640px) {
+  .drag-drop-text {
+    display: none;
+  }
+  .drop-area {
+    border: none;
+  }
   .logo {
-    width: 240px;
+    gap: 24px
   }
-  .logo-text {
-    opacity: 0;
-  }
-  .logo-name {
-    opacity: 0;
-  }
-  .menu {
+  .logo-section {
+    display: flex;
     width: 100vw;
+    height: fit-content;
+    justify-content: center;
+    align-items: center
   }
   .logo-icon {
-    left: 0;
-    top: 0;
+    position: relative;
+    left: unset;
+    top: unset;
     width: 128px;
     height: 128px;
   }
   .logo-spinner {
-    left: 0;
-    top: 0;
+    position: relative;
+    left: unset;
+    top: unset;
     width: 128px;
     height: 128px;
+  }
+  .logo-text {
+    display: none;
+  }
+  .logo-name {
+    display: none;
+  }
+  .menu {
+    width: 100vw;
   }
   .logo .open-file-button {
     top: 204px;
@@ -982,7 +1044,6 @@ button {
     top: 304px;
   }
   .message-dialog .message-text {
-
     top: 190px;
     width: 240px;
   }
@@ -990,11 +1051,6 @@ button {
     top: 160px;
     height: 2px;
     width: 100px;
-  }
-  .about .logo {
-    width: 100%;
-    padding-left: 0;
-    padding-right: 0;
   }
   .about .logo-message {
     top: 175px;
@@ -1024,6 +1080,12 @@ button {
     margin-top: 6px;
     margin-bottom: 6px;
   }
+  .drag-drop-text {
+    display: none;
+  }
+  .drop-area {
+    border: none;
+  }
 }
 
 /* DARK MODE */
@@ -1033,6 +1095,7 @@ button {
     --primary-color: #2C64E3;
     --secondary-color: #374e84;
     --primary-white: #dfdddd;
+    --text-color-white: #F7F9FC;
     --primary-background-color: #0D0D0D;
     --secondary-background-color: #222222;
     --font-size: 16px;
@@ -1061,7 +1124,9 @@ button {
   .logo-spinner-stroke {
     stroke: #ffffff;
   }
-
+  .drop-area {
+    color: var(--text-color-white);
+  }
   .message-dialog {
     color: var(--primary-white);
   }
@@ -1074,11 +1139,14 @@ button {
   .welcome .menu {
     background-color: #2d2d2d;
   }
+  .menu .menu-group .menu-command:focus{
+    color: var(--text-color-white);
+    background-color: var(--secondary-color);
+  }
   .menu .menu-group .menu-command:focus::before {
-    background-color: var(--secondary-background-color); /* Change to your desired line color */
+    background-color: var(--primary-color);
   }
   .about .logo {
-    background-color: #1e1e1e;
     color: var(--primary-white);
   }
   .about a {
@@ -1133,10 +1201,6 @@ button {
     color: #ffffff;
     background-color: #b43029;
   }
-  .menu-button {
-    /* color: #aaaaaa; */
-    
-  }
   .menu-button:hover {
     color: #ffffff;
   }
@@ -1149,10 +1213,6 @@ button {
   }
   .menu .menu-group .menu-command {
     color: #ffffff;
-  }
-  .menu .menu-group .menu-command:focus {
-    color: #ffffff;
-    background-color: #2e6bd2;
   }
   .menu .menu-group .menu-command:disabled {
     color: var(--primary-white);
