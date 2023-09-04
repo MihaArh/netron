@@ -1000,6 +1000,9 @@ button {
   .drop-area {
     border: none;
   }
+  .drop-icon {
+    display: none;
+  }
   .logo {
     gap: 24px
   }
